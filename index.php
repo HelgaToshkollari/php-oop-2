@@ -24,16 +24,18 @@ require_once "./productList.php";
     <main>
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-sm-6 justify-content-center d-flex flex-wrap gap-2">
+                    <div class="col justify-content-center d-flex flex-wrap gap-2">
 
                         <?php foreach($productList as $product){ ?>
 
                             <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="<?php echo $product->getProduct_img()?>" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $product->getName() ?></h5>
                                     <h6 class="card-subtitle mb-2 text-muted"> <?php echo $product->getCategory()?></h6>
-                                    <p class="card-text"><?php echo $product->getDescription() ?></p>
-                                    <p class="card-text"><?php echo $product->getPrice() ?></p>
+                                    <p class="card-text">Descrizione:
+                                        <br> <?php echo $product->getDescription() ?></p>
+                                    <p class="card-text">Costo : <?php echo $product->getPrice() ?></p>
                                 </div>
                             </div>
 

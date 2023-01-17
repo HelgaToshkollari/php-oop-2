@@ -2,6 +2,7 @@
 
 class Product {
     protected $name;
+    protected $product_img;
     protected $category;
     protected $description;
     protected $isAvailable = true;
@@ -9,8 +10,9 @@ class Product {
     
     
 
-    function __construct( $name, Category $category, $description , $price, $isAvailable = null )
+    function __construct( $product_img,$name, Category $category, $description , $price, $isAvailable = null )
     {
+        $this->setProduct_img($product_img);
         $this->setName($name);
         $this->setCategory($category);
         $this->setDescription($description);
@@ -119,6 +121,26 @@ class Product {
         }
 
         $this->isAvailable = $isAvailable;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of product_img
+     */ 
+    public function getProduct_img()
+    {
+        return $this->product_img;
+    }
+
+    /**
+     * Set the value of product_img
+     *
+     * @return  self
+     */ 
+    public function setProduct_img($product_img)
+    {
+        $this->product_img = $product_img;
 
         return $this;
     }

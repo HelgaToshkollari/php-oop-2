@@ -6,9 +6,9 @@ class Food extends Product{
     private $calories;
     private $ingrediants = [];
 
-    function __construct ($name, Category $category, $description ,$price , $calories = null ){
+    function __construct ($product_img,$name, Category $category, $description ,$price , $calories = null ){
 
-        parent::__construct($name,$category,$description,$price);
+        parent::__construct($product_img,$name,$category,$description,$price);
 
         $this->setCalories($calories);
 
