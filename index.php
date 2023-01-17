@@ -3,6 +3,8 @@ require_once  "./classes/Product.php";
 require_once  "./classes/Category.php";
 require_once "./productList.php";
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +31,7 @@ require_once "./productList.php";
                             <div class="card" style="width: 18rem;">
                                 <div class="card-body">
                                     <h5 class="card-title"><?php echo $product->getName() ?></h5>
-                                    <h6 class="card-subtitle mb-2 text-muted"><?php echo $product->getCategory() ?></h6>
+                                    <h6 class="card-subtitle mb-2 text-muted"> <?php echo $product->getCategory()?></h6>
                                     <p class="card-text"><?php echo $product->getDescription() ?></p>
                                     <p class="card-text"><?php echo $product->getPrice() ?></p>
                                 </div>

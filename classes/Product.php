@@ -22,8 +22,9 @@ class Product {
      * Get the value of category
      */ 
     public function getCategory()
-    {
-        return $this->category;
+    { 
+
+        return $this->category->getName();
     }
 
     /**

@@ -59,7 +59,7 @@ class Category {
     }
 
     public function getIconHTML() {
-        return "<i class='fas $this->icon' />";
+        return "<i class='$this->icon' />";
     }
 }
 ?>
