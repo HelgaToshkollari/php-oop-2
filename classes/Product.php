@@ -1,19 +1,21 @@
 <?php
 
 class Product {
-    private string $name;
-    private string $category;
-    private string $description;
-    private string $price;
+    protected $name;
+    protected $category;
+    protected $description;
+    protected $isAvailable = true;
+    protected $price;
     
     
 
-    function __construct($name,$category,$description,$price)
+    function __construct( $name, Category $category, $description , $price, $isAvailable = null )
     {
-        $this->name= $name;
-        $this->category= $category;
-        $this->description= $description;
-        $this->price= $price;
+        $this->setName($name);
+        $this->setCategory($category);
+        $this->setDescription($description);
+        $this->setIsAvailable($isAvailable);
+        $this->setPrice($price);
     }
 
     /**
@@ -92,6 +94,30 @@ class Product {
     public function setName($name)
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of isAvailable
+     */ 
+    public function getIsAvailable()
+    {
+        return $this->isAvailable;
+    }
+
+    /**
+     * Set the value of isAvailable
+     *
+     * @return  self
+     */ 
+    public function setIsAvailable($isAvailable)
+    {
+        if (is_null($isAvailable)){
+            return ;
+        }
+
+        $this->isAvailable = $isAvailable;
 
         return $this;
     }
